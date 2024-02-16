@@ -6,7 +6,8 @@ This image is a simple 'Hello world' in an HTTP server to be used to test load b
 It shows ```Hello from <hostname>``` for every request, making it easier to determine what host received the request.
 
 ## Running a simple test
-    docker run --rm -it -p 80:80 strm/helloworld-http
+    docker build -t hello-docker:1 .
+    docker run --rm -it -p 8000:8000 -e PORT=8000 -e MESSAGE=HELLO-1 hello-docker:1
 
 Will result in a single instance running on your port 80, you can test and will get a result like it:
     

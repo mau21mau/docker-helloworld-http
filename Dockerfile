@@ -1,6 +1,4 @@
-FROM debian:jessie
-
-LABEL maintainer "opsxcq@strm.sh"
+FROM ubuntu:20.04
 
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -11,8 +9,6 @@ RUN apt-get update && \
 
 COPY main.sh /
 RUN mkdir /www
-
-EXPOSE 80
 
 WORKDIR /www
 
